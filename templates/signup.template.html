@@ -1,0 +1,38 @@
+<div>
+    <h2>Sign Up</h2>
+    <form name="signUpForm" ng-submit="signUpCtrl.submit()" novalidate>
+      <div class="form-group" ng-class="{'has-error': signUpForm.firstName.$touched && signUpForm.firstName.$invalid}">
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" id="firstName" name="firstName" ng-model="signUpCtrl.user.firstName" required>
+        <div ng-show="signUpForm.firstName.$touched && signUpForm.firstName.$invalid" class="help-block">First Name is required.</div>
+      </div>
+  
+      <div class="form-group" ng-class="{'has-error': signUpForm.lastName.$touched && signUpForm.lastName.$invalid}">
+        <label for="lastName">Last Name</label>
+        <input type="text" class="form-control" id="lastName" name="lastName" ng-model="signUpCtrl.user.lastName" required>
+        <div ng-show="signUpForm.lastName.$touched && signUpForm.lastName.$invalid" class="help-block">Last Name is required.</div>
+      </div>
+  
+      <div class="form-group" ng-class="{'has-error': signUpForm.email.$touched && signUpForm.email.$invalid}">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" name="email" ng-model="signUpCtrl.user.email" required>
+        <div ng-show="signUpForm.email.$touched && signUpForm.email.$invalid" class="help-block">Valid Email is required.</div>
+      </div>
+  
+      <div class="form-group" ng-class="{'has-error': signUpForm.phone.$touched && signUpForm.phone.$invalid}">
+        <label for="phone">Phone</label>
+        <input type="tel" class="form-control" id="phone" name="phone" ng-model="signUpCtrl.user.phone" required>
+        <div ng-show="signUpForm.phone.$touched && signUpForm.phone.$invalid" class="help-block">Phone Number is required.</div>
+      </div>
+  
+      <div class="form-group" ng-class="{'has-error': signUpCtrl.menuNotFound}">
+        <label for="favorite">Favorite Menu Item</label>
+        <input type="text" class="form-control" id="favorite" name="favorite" ng-model="signUpCtrl.user.favorite" required>
+        <div ng-show="signUpCtrl.menuNotFound" class="help-block">No such menu number exists.</div>
+      </div>
+  
+      <button type="submit" class="btn btn-default" ng-disabled="signUpForm.$invalid">Submit</button>
+      <div ng-show="signUpCtrl.saved" class="alert alert-success">Your information has been saved.</div>
+    </form>
+  </div>
+  
